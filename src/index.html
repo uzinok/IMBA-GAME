@@ -2,24 +2,35 @@
 <html lang="ru">
 
 <head>
-  <include src="src/template/head.html"></include>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Оффлайн ИНТЕНСИВЫ ПО ПРОГРАММИРОВАНИЮ</title>
 </head>
 
 <body>
-  <div style="display: none;">
-    <include src="resource/svg/sprite.svg"></include>
-  </div>
-  <include src="src/template/header.html"></include>
-  <main>
 
-    <h2>Hello</h2>
-    <svg width="300" class="footer-developer-link__img" role="img">
-      <use xlink:href="#cat-logo"></use>
-    </svg>
-    <img width="300" src="img/img.jpg" alt="#">
+		<script src="./js/picturefill.js" async></script>
+		<script src="./js/loading-attribute-polyfill.umd.js" async></script>
 
-    <include src="src/template/footer.html"></include>
-  </main>
+		<script>
+			function asyncCss(files) {
+				files.forEach(file => {
+					let link = document.createElement('link');
+					link.href = file;
+					link.rel = 'stylesheet';
+
+					document.body.append(link);
+				});
+
+			}
+
+			asyncCss(['css/fonts.css', 'css/background.css']);
+
+		</script>
+
+		<script src="js/main.min.js"></script>
+
 </body>
 
 </html>

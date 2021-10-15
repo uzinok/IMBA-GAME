@@ -43,7 +43,7 @@ exports.clean = clean;
 const copy = () => {
     return src([
             'src/fonts/*.+(woff|woff2|ttf)*',
-            'src/img/*.+(png|jpg|svg|webp|ico|gif|JPG)*',
+            'src/img/**/*.+(png|jpg|svg|webp|ico|gif|JPG)*',
             'src/favicon.ico'
         ], {
             base: 'src'
@@ -68,7 +68,7 @@ exports.copy_css = copy_css;
  * less
  */
 const lessToCss = () => {
-    return src('src/less/style.less')
+    return src(['src/less/style.less', 'src/less/fonts.less', 'src/less/background.less'])
         .pipe(plumber({
             errorHandler: notify.onError(function (err) {
                 return {
@@ -85,7 +85,7 @@ const lessToCss = () => {
         }))
         .pipe(gcmq())
         .pipe(csso())
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('build/css'))
         .pipe(browserSync.stream());
 }
@@ -177,7 +177,7 @@ const scripts = () => {
             },
             exclude: ['tasks']
         }))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('build/js'))
         .pipe(browserSync.stream());
 }
@@ -236,7 +236,7 @@ exports.sprite = series(cleanSprite, setSprite);
 
 // webp_convert
 const webp_convert = () => {
-    return src(['src/img/*.+(png|jpg)'])
+    return src(['src/img/**/*.+(png|jpg)'])
         .pipe(webp())
         .pipe(dest('src/img/'));
 }
@@ -279,8 +279,6 @@ const ttf2woff2 = require('gulp-ttf2woff2');
 const ttf2woff = require('gulp-ttf2woff');
 
 const fonts = () => {
-    src(['resource/fonts/*.ttf'])
-        .pipe(dest('src/fonts/'));
     src(['resource/fonts/*.ttf'])
         .pipe(ttf2woff())
         .pipe(dest('src/fonts/'));
