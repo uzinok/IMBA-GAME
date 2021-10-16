@@ -6,6 +6,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+// scroll
 var anchors = document.querySelectorAll('a[href*="#"]');
 
 var _iterator = _createForOfIteratorHelper(anchors),
@@ -26,15 +27,16 @@ try {
 
   for (_iterator.s(); !(_step = _iterator.n()).done;) {
     _loop();
-  }
+  } // nav
+
 } catch (err) {
   _iterator.e(err);
 } finally {
   _iterator.f();
 }
 
-var navToggle = document.querySelector('.js-nav-page__toggle');
-var nav = document.querySelector('.js-nav-page__wrap-list');
+var navToggle = document.querySelector('.js-nav-page-toggle');
+var nav = document.querySelector('.js-nav-page-wrap-list');
 navToggle.addEventListener('click', function () {
   nav.classList.toggle('nav-page__wrap-list-visually');
 });

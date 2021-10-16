@@ -1,3 +1,4 @@
+// scroll
 const anchors = document.querySelectorAll('a[href*="#"]')
 for (let anchor of anchors) {
   anchor.addEventListener('click', function (e) {
@@ -12,9 +13,10 @@ for (let anchor of anchors) {
   })
 }
 
-const navToggle = document.querySelector('.js-nav-page__toggle');
-const nav = document.querySelector('.js-nav-page__wrap-list');
+// nav
+const navToggle = document.querySelector('.js-nav-page-toggle');
+const nav = document.querySelector('.js-nav-page-wrap-list');
 
 navToggle.addEventListener('click', function () {
-	nav.classList.toggle('nav-page__wrap-list-visually')
+	nav.classList.toggle('nav-page__wrap-list-visually');
 })
