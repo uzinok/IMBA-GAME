@@ -44,13 +44,13 @@
 				</a>
 
 				<!-- nav-page__wrap-list -->
-				<div class="nav-page__wrap-list">
+				<div class="nav-page__wrap-list js-nav-page__wrap-list">
 					<!-- nav-page__list -->
 					<ul class="nav-page__list">
-						<li class="nav-page__item"><a class="nav-page__link" href="#">О нас</a></li>
-						<li class="nav-page__item"><a class="nav-page__link" href="#">Курсы</a></li>
-						<li class="nav-page__item"><a class="nav-page__link" href="#">FAQ</a></li>
-						<li class="nav-page__item"><a class="nav-page__link" href="#">Контакты</a></li>
+						<li class="nav-page__item"><a class="nav-page__link" href="#about">О нас</a></li>
+						<li class="nav-page__item"><a class="nav-page__link" href="#cource">Курсы</a></li>
+						<li class="nav-page__item"><a class="nav-page__link" href="#faq">FAQ</a></li>
+						<li class="nav-page__item"><a class="nav-page__link" href="#contact">Контакты</a></li>
 					</ul>
 					<!-- /nav-page__list -->
 
@@ -63,7 +63,7 @@
 				</div>
 				<!-- nav-page__wrap-list -->
 
-				<button class="nav-page__toggle" aria-label="Показать меню"></button>
+				<button class="nav-page__toggle js-nav-page__toggle"><span class="visually-hidden">Показать меню</span></button>
 			</nav>
 			<!-- /nav-page -->
 		</div>
@@ -131,7 +131,7 @@
 				</ol>
 				<!-- /step__list -->
 
-				<iframe width="1140" height="641" src="https://www.youtube.com/embed/WC2hRZlrcbs" title="YouTube video player"
+				<iframe width="1140" height="641" loading="lazy" src="https://www.youtube.com/embed/WC2hRZlrcbs" title="YouTube video player"
 					frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
 
@@ -141,7 +141,7 @@
 		<!-- /step -->
 
 		<!-- about -->
-		<section class="about">
+		<section id="about" class="about">
 			<h2 class="visually-hidden">о нас</h2>
 			<!-- container-flex-desktop -->
 			<div class="wrap container-flex-desktop">
@@ -164,7 +164,7 @@
 		<!-- /about -->
 
 		<!-- cource -->
-		<section class="cource">
+		<section id="cource" class="cource">
 			<div class="cource__wrap wrap">
 				<h2>Курсы инжинириума</h2>
 
@@ -180,7 +180,7 @@
 		<!-- /cource -->
 
 		<!-- faq -->
-		<section class="faq">
+		<section id="faq" class="faq">
 			<!-- container-flex-desktop -->
 			<div class="wrap container-flex-desktop">
 
@@ -208,15 +208,21 @@
 	</main>
 	<!-- /main -->
 
-	<!-- map -->
-	<div class="map">
-		<div class="wrap">
-			<iframe src="" frameborder="0"></iframe>
-		</div>
-	</div>
-	<!-- /map -->
 
+	<!-- page-footer -->
 	<footer class="page-footer">
+		<!-- map -->
+		<div id="contact" class="map">
+			<div class="map__wrap wrap">
+				<div class="map__modal">
+					<button class="map__modal__close" aria-hidden="true">Закрыть</button>
+					<address><span class="visually-hidden">г. Череповец,</span> Московский проспект, 49б</address>
+					<a href="tel:779997004061">77-999-700-40-61</a>
+				</div>
+				<iframe src="" frameborder="0"></iframe>
+			</div>
+		</div>
+		<!-- /map -->
 		<div class="wrap">
 			<!-- nav-page -->
 			<nav class="nav-page">
@@ -229,10 +235,10 @@
 				<div class="nav-page__wrap-list">
 					<!-- nav-page__list -->
 					<ul class="nav-page__list">
-						<li class="nav-page__item"><a class="nav-page__link" href="#">О нас</a></li>
-						<li class="nav-page__item"><a class="nav-page__link" href="#">Курсы</a></li>
-						<li class="nav-page__item"><a class="nav-page__link" href="#">FAQ</a></li>
-						<li class="nav-page__item"><a class="nav-page__link" href="#">Контакты</a></li>
+						<li class="nav-page__item"><a class="nav-page__link" href="#about">О нас</a></li>
+						<li class="nav-page__item"><a class="nav-page__link" href="#cource">Курсы</a></li>
+						<li class="nav-page__item"><a class="nav-page__link" href="#faq">FAQ</a></li>
+						<li class="nav-page__item"><a class="nav-page__link" href="#contact">Контакты</a></li>
 					</ul>
 					<!-- /nav-page__list -->
 
@@ -243,10 +249,15 @@
 						<!-- nav-page__social-list -->
 						<ul class="nav-page__social-list">
 							<li class="nav-page__social-item">
-								<a href="#" class="nav-page__social nav-page__social--"></a>
+								<a href="https://www.youtube.com/channel/UCBx0xw9L-vvIkiNeCWrP75Q/videos"
+									class="nav-page__social nav-page__social--youtube">
+									<span class="visually-hidden">Youtube.com</span>
+								</a>
 							</li>
 							<li class="nav-page__social-item">
-								<a href="#" class="nav-page__social nav-page__social--"></a>
+								<a href="https://vk.com/inginirium_cherepovec" class="nav-page__social nav-page__social--vk">
+									<span class="visually-hidden">Вконтакте</span>
+								</a>
 							</li>
 						</ul>
 						<!-- /nav-page__social-list -->
@@ -260,6 +271,7 @@
 			<!-- /nav-page -->
 		</div>
 	</footer>
+	<!-- /page-footer -->
 
 	<script src="./js/picturefill.js" async></script>
 	<script src="./js/loading-attribute-polyfill.umd.js" async></script>
