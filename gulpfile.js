@@ -13,9 +13,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const csso = require('gulp-csso');
 const gcmq = require('gulp-group-css-media-queries');
 // html
-const posthtml = require('gulp-posthtml');
-const include = require('posthtml-include');
-const htmlmin = require('gulp-htmlmin');
+const pug = require("gulp-pug");
 // js
 const babel = require('gulp-babel');
 const webpackStream = require('webpack-stream');
@@ -82,7 +80,7 @@ const lessToCss = () => {
 		.pipe(less())
 		.pipe(autoprefixer({
 			grid: true,
-			overrideBrowserslist: ['last 10 versions']
+			overrideBrowserslist: ['last 5 versions']
 		}))
 		.pipe(gcmq())
 		.pipe(csso())
@@ -96,22 +94,16 @@ exports.lessToCss = lessToCss;
  * html
  */
 const htmlTo = () => {
-	return src('src/*.html')
+	return src(["src/pug/*.pug", "src/less/blocks/*/*.pug"])
 		.pipe(plumber({
 			errorHandler: notify.onError(function (err) {
 				return {
-					title: 'html',
+					title: "Pug",
 					message: err.message
 				}
 			})
 		}))
-		.pipe(posthtml([
-			include()
-		]))
-		.pipe(htmlmin({
-			removeComments: false,
-			collapseWhitespace: true
-		}))
+		.pipe(pug())
 		.pipe(dest('build'))
 		.pipe(browserSync.stream());
 }
@@ -164,7 +156,6 @@ const scripts = () => {
 				}
 			})
 		}))
-		.pipe(sourcemaps.init())
 		.pipe(concat('main.js', {
 			newLine: ';'
 		}))
@@ -178,7 +169,6 @@ const scripts = () => {
 			},
 			exclude: ['tasks']
 		}))
-		.pipe(sourcemaps.write('.'))
 		.pipe(dest('build/js'))
 		.pipe(browserSync.stream());
 }
@@ -195,7 +185,7 @@ const server = () => {
 	});
 
 	watch('src/less/**/*.less', lessToCss);
-	watch('src/*.html', htmlTo);
+	watch(["src/pug/**/*.pug", "src/less/blocks/**/*.pug"], htmlTo);
 	watch(['src/fonts/*.{woff, woff2, ttf}*', 'src/img/*.+(png|jpg|svg|webp|ico|gif|JPG)*', ], copy);
 	watch('src/scripts/*.js', copy_script);
 	watch('src/css/*.css', copy_css);
@@ -206,7 +196,7 @@ exports.server = server;
 /**
  * default
  */
-exports.default = series(clean, parallel(copy, copy_script, copy_css, lessToCss, scripts, htmlTo), server);
+exports.default = series(clean, scripts, parallel(copy, copy_script, copy_css, lessToCss, scripts, htmlTo), server);
 
 /**
  * images
@@ -237,7 +227,7 @@ exports.sprite = series(cleanSprite, setSprite);
 
 // webp_convert
 const webp_convert = () => {
-	return src(['src/img/**/*.+(png|jpg)'])
+	return src(['src/img/*.+(png|jpg)'])
 		.pipe(webp())
 		.pipe(dest('src/img/'));
 }
@@ -280,6 +270,8 @@ const ttf2woff2 = require('gulp-ttf2woff2');
 const ttf2woff = require('gulp-ttf2woff');
 
 const fonts = () => {
+	src(['resource/fonts/*.ttf'])
+		.pipe(dest('src/fonts/'));
 	src(['resource/fonts/*.ttf'])
 		.pipe(ttf2woff())
 		.pipe(dest('src/fonts/'));
@@ -327,12 +319,12 @@ const scriptsBuild = () => {
 			},
 			exclude: ['tasks']
 		}))
-		.pipe(dest('build/js'))
+		.pipe(dest('build/js'));
 }
 exports.scriptsBuild = scriptsBuild;
 
 // const scriptsBuild = () => {
-//   return src('./src/js/main.js')
+//     return src('./src/js/main.js')
 //     .pipe(webpackStream({
 //       output: {
 //         filename: 'main.js',
@@ -358,15 +350,9 @@ exports.scriptsBuild = scriptsBuild;
  * html to build
  */
 const htmlToBuild = () => {
-	return src('src/*.html')
-		.pipe(posthtml([
-			include()
-		]))
-		.pipe(htmlmin({
-			removeComments: false,
-			collapseWhitespace: true
-		}))
-		.pipe(dest('build'))
+	return src("src/pug/*.pug")
+		.pipe(pug())
+		.pipe(dest('build'));
 }
 exports.htmlToBuild = htmlToBuild;
 

@@ -1,25 +1,65 @@
+// style
+function asyncCss(files) {
+	files.forEach(file => {
+		let link = document.createElement('link');
+		link.href = file;
+		link.rel = 'stylesheet';
+
+		document.body.append(link);
+	});
+
+}
+
+asyncCss(['css/fonts.css', 'css/background.css']);
+
 // scroll
-const anchors = document.querySelectorAll('a[href*="#"]')
-for (let anchor of anchors) {
+const headerAnchors = document.querySelectorAll('header a[href*="#"]');
+const footerAnchors = document.querySelectorAll('footer a[href*="#"]');
+let windowWidth = window.innerWidth;
+
+window.addEventListener('resize', function () {
+	windowWidth = window.innerWidth;
+})
+
+for (let anchor of headerAnchors) {
 	anchor.addEventListener('click', function (e) {
-		e.preventDefault()
-
-		const blockID = anchor.getAttribute('href').substr(1)
-
-		document.getElementById(blockID).scrollIntoView({
-			behavior: 'smooth',
-			block: 'start'
-		})
+		e.preventDefault();
+		scroll(anchor);
+		if (windowWidth < 990) toggleNav();
 	})
 }
 
-// nav
+for (let anchor of footerAnchors) {
+	anchor.addEventListener('click', function (e) {
+		e.preventDefault();
+		scroll(anchor);
+	})
+}
+
+function scroll(anchor) {
+	const blockID = anchor.getAttribute('href').substr(1)
+
+	document.getElementById(blockID).scrollIntoView({
+		behavior: 'smooth',
+		block: 'start'
+	})
+}
+
 const navToggle = document.querySelector('.js-nav-page-toggle');
 const nav = document.querySelector('.js-nav-page-wrap-list');
 
 navToggle.addEventListener('click', function () {
-	nav.classList.toggle('nav-page__wrap-list-visually');
+	toggleNav();
 })
+
+function toggleNav() {
+	nav.setAttribute('style', 'transition: opacity 0.3s ease-in-out;');
+	setTimeout(function () {
+		nav.removeAttribute('style');
+	}, 300)
+	navToggle.classList.toggle('js-nav-page-toggle-visually');
+	nav.classList.toggle('nav-page__wrap-list-visually');
+}
 
 // ymap
 ymaps.ready(init);
@@ -27,7 +67,8 @@ ymaps.ready(init);
 function init() {
 	var myMap = new ymaps.Map("map", {
 		center: [59.122298, 37.909166],
-		zoom: 17
+		zoom: 17,
+		controls: ['zoomControl', 'typeSelector']
 	}, {
 		searchControlProvider: 'yandex#search'
 	});
