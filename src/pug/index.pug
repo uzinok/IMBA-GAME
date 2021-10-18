@@ -108,10 +108,10 @@ html(lang="en")
 			//  /step
 
 			//  about
-			section.about
+			section#video.about
 				h2.visually-hidden о нас
 				.wrap
-					.video-wrap#video
+					.video-wrap
 						.video
 							a.video__link(href='https://youtu.be/WC2hRZlrcbs' target='_blank')
 								img.video__media(src='https://i.ytimg.com/vi/WC2hRZlrcbs/maxresdefault.jpg' alt='index.html')
@@ -214,6 +214,6 @@ html(lang="en")
 		//  /page-footer
 		//  /overflow
 		script(src='js/swiper-bundle.min.js')
-		script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU')
+		//- script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU')
 		script
 			include ../../build/js/main.min.js
