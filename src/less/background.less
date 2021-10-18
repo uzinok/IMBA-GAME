@@ -1,0 +1,106 @@
+@import './variable.less';
+
+.top {
+	background-image: url(../img/bg/bg-top.jpg);
+	background-position: center -60px;
+	background-repeat: no-repeat;
+	background-size: 996px auto;
+}
+
+@media (min-width: 996px) {
+	.top {
+		background-image: url(../img/bg/bg-top@desktop.jpg);
+		background-size: auto;
+	}
+}
+
+@media (max-width: @max-lg) {
+	.about__heading {
+		&::after {
+			content: '';
+			display: block;
+			margin: 48px auto 0;
+			width: 316px;
+			height: 316px;
+			background-image: url(../img/img-ambition.png);
+		}
+	}
+}
+
+@media (min-width: @min-lg) {
+	.about__container-decor {
+		background-image: url(../img/img-ambition@desktop.png);
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 413px auto;
+	}
+}
+
+.about {
+	background-image: url(../img/bg/bg-about.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 996px auto;
+}
+
+@media (min-width: 996px) {
+	.about {
+		background-image: url(../img/bg/bg-about@desktop.jpg);
+		background-size: auto;
+	}
+}
+
+.cource__item {
+
+	&--pyton::before {
+		background-image: url(../img/icon-cource/icon-python.png);
+	}
+
+	&--c::before {
+		background-image: url(../img/icon-cource/icon-c.png);
+	}
+
+	&--web::before {
+		background-image: url(../img/icon-cource/icon-web.png);
+	}
+}
+
+.faq {
+	background-image: url(../img/bg/bg-faq.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.faq__container-decor {
+	background-image: url(../img/img-faq.png);
+}
+
+@media (min-width: @min-lg) {
+	.faq {
+		background-image: url(../img/bg/bg-faq@desktop.jpg);
+	}
+
+	.faq__container-decor {
+		height: 311px;
+		background-image: url(../img/img-faq@desktop.png);
+	}
+}
+
+.nav-page__social {
+
+	&--youtube {
+		background-image: url(../img/soc/icon-youtube.svg);
+	}
+
+	&--vk {
+		background-image: url(../img/soc/icon-vk.svg);
+	}
+}
+
+@media (min-width: @min-md) {
+	.nav-page__link--icon-phone {
+		background-image: url(../img/icon-phone.svg);
+		background-position: left center;
+		background-repeat: no-repeat;
+	}
+}

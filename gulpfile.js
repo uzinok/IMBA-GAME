@@ -67,7 +67,7 @@ exports.copy_css = copy_css;
  * less
  */
 const lessToCss = () => {
-	return src(['src/less/style.less', 'src/less/fonts.less'])
+	return src(['src/less/style.less', 'src/less/fonts.less', 'src/less/background.less'])
 		.pipe(plumber({
 			errorHandler: notify.onError(function (err) {
 				return {

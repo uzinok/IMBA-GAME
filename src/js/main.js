@@ -10,7 +10,7 @@ function asyncCss(files) {
 
 }
 
-asyncCss(['css/fonts.css', 'css/swiper-bundle.min.css']);
+asyncCss(['css/fonts.css', 'css/background.css', 'css/swiper-bundle.min.css']);
 
 // scroll
 const anchors = document.querySelectorAll('a[href*="#"]')
