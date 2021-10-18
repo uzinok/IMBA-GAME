@@ -1,0 +1,193 @@
+@width: 28px;
+
+.step__list {
+	.list-rezet;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+
+.step__item {
+	width: 235px;
+	margin: 0 41px 50px;
+
+	text-align: center;
+
+	& p {
+		margin: 0;
+	}
+	& p:last-child {
+		position: relative;
+		margin: 20px 0 0;
+
+		&::before {
+			content: url(../img/step/step-arrow.png);
+			position: absolute;
+			left: 50%;
+			top: -20px;
+			transform: translateX(-50%);
+		}
+	}
+
+	& h3 {
+		position: relative;
+		padding: 15px;
+		width: 150px;
+		height: 34px;
+		margin: 1.5em auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		font-size: 15px;
+		line-height: 1;
+
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: @width;
+			height: 100%;
+		}
+
+		&::before {
+			left: -@width;
+			top: 0;
+		}
+
+		&::after {
+			right: -@width;
+		}
+	}
+
+	&:not(:last-child) {
+		& h3::after {
+			top: -5px;
+			transform: skewY(-20deg);
+		}
+	}
+
+	&:not(:first-child) {
+		& h3::before {
+			top: 5px;
+			transform: skewY(-20deg);
+		}
+	}
+
+	&:nth-child(1) {
+		& h3 {
+			background-color: #F3E01E;
+
+			&::before {
+				background-image: url(../../img/step/step-start.svg);
+			}
+
+			&::after {
+				background-color: #F3E01E;
+				background-image: linear-gradient(to right, #F3E01E, #ffa100);
+			}
+		}
+	}
+
+	&:nth-child(2) {
+		& h3 {
+			background-color: #E06E37;
+
+			&::before {
+				background-color: #E06E37;
+				background-image: linear-gradient(to right, #ff9d00, #E06E37);
+			}
+
+			&::after {
+				background-color: #E06E37;
+				background-image: linear-gradient(to right, #E06E37, #ff5f35);
+			}
+		}
+	}
+
+	&:nth-child(3) {
+		& h3 {
+			background-color: #db3b50;
+
+			&::before {
+				background-color: #db3b50;
+				background-image: linear-gradient(to right, #ff5d36, #db3b50);
+			}
+
+			&::after {
+				background-color: #db3b50;
+				background-image: linear-gradient(to right, #db3b50, #ff3183);
+			}
+		}
+	}
+
+	&:nth-child(4) {
+		& h3 {
+			background-color: #CF2366;
+
+			&::before {
+				background-color: #CF2366;
+				background-image: linear-gradient(to right, #ff3186, #CF2366);
+			}
+
+			&::after {
+				background-color: #CF2366;
+				background-image: linear-gradient(to right, #CF2366, #bf349d);
+			}
+		}
+	}
+
+	&:nth-child(5) {
+		& h3 {
+			background-color: #AB3388;
+			color: #fff;
+
+			&::before {
+				background-color: #AB3388;
+				background-image: linear-gradient(to right, #be359c, #AB3388);
+			}
+
+			&::after {
+				background-image: url(../img/step/step-end.svg);
+				background-repeat: no-repeat;
+				background-size: auto 64px;
+				right: -@width - 3px;
+				width: @width + 3px;
+			}
+		}
+	}
+}
+
+@media (min-width: 1210px) {
+	.step__list {
+		align-items: flex-end;
+		margin-bottom: 66px;
+	}
+
+	.step__item {
+		margin: 0;
+
+		&:nth-child(1) p:last-child {
+			height: 23px;
+		}
+
+		&:nth-child(2) p:last-child {
+			height: 43px;
+		}
+
+		&:nth-child(3) p:last-child {
+			height: 63px;
+		}
+
+		&:nth-child(4) p:last-child {
+			height: 83px;
+		}
+
+		&:nth-child(5) p:last-child {
+			height: 103px;
+		}
+	}
+}

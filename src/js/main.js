@@ -10,55 +10,21 @@ function asyncCss(files) {
 
 }
 
-asyncCss(['css/fonts.css', 'css/background.css']);
+asyncCss(['css/fonts.css', 'css/swiper-bundle.min.css']);
 
 // scroll
-const headerAnchors = document.querySelectorAll('header a[href*="#"]');
-const footerAnchors = document.querySelectorAll('footer a[href*="#"]');
-let windowWidth = window.innerWidth;
-
-window.addEventListener('resize', function () {
-	windowWidth = window.innerWidth;
-})
-
-for (let anchor of headerAnchors) {
+const anchors = document.querySelectorAll('a[href*="#"]')
+for (let anchor of anchors) {
 	anchor.addEventListener('click', function (e) {
-		e.preventDefault();
-		scroll(anchor);
-		if (windowWidth < 990) toggleNav();
+		e.preventDefault()
+
+		const blockID = anchor.getAttribute('href').substr(1)
+
+		document.getElementById(blockID).scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+		})
 	})
-}
-
-for (let anchor of footerAnchors) {
-	anchor.addEventListener('click', function (e) {
-		e.preventDefault();
-		scroll(anchor);
-	})
-}
-
-function scroll(anchor) {
-	const blockID = anchor.getAttribute('href').substr(1)
-
-	document.getElementById(blockID).scrollIntoView({
-		behavior: 'smooth',
-		block: 'start'
-	})
-}
-
-const navToggle = document.querySelector('.js-nav-page-toggle');
-const nav = document.querySelector('.js-nav-page-wrap-list');
-
-navToggle.addEventListener('click', function () {
-	toggleNav();
-})
-
-function toggleNav() {
-	nav.setAttribute('style', 'transition: opacity 0.3s ease-in-out;');
-	setTimeout(function () {
-		nav.removeAttribute('style');
-	}, 300)
-	navToggle.classList.toggle('js-nav-page-toggle-visually');
-	nav.classList.toggle('nav-page__wrap-list-visually');
 }
 
 // ymap
@@ -85,4 +51,77 @@ function init() {
 	myMap.geoObjects.add(myPlacemark);
 	myPlacemark.balloon.open();
 	myMap.behaviors.disable('scrollZoom');
+}
+
+// video
+
+function parseMediaURL(media) {
+	let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
+	let url = media.src;
+	let match = url.match(regexp);
+	return match[1];
+}
+
+function generateURL(id) {
+	let query = '?rel=0&showinfo=0&autoplay=1';
+	return 'https://www.youtube.com/embed/' + id + query;
+}
+
+function createIframe(id) {
+	let iframe = document.createElement('iframe');
+	iframe.setAttribute('allowfullscreen', '');
+	iframe.setAttribute('allow', 'autoplay');
+	iframe.setAttribute('src', generateURL(id));
+	iframe.classList.add('video__media');
+	return iframe;
+}
+
+function setupVideo(video) {
+	let link = video.querySelector('.video__link');
+	let media = video.querySelector('.video__media');
+	let button = video.querySelector('.video__button');
+	let id = parseMediaURL(media);
+	link.removeAttribute('href');
+	video.classList.add('video--enabled');
+
+	video.addEventListener('click', function () {
+		let iframe = createIframe(id);
+		link.style.display = "none";
+		button.style.display = "none";
+		video.appendChild(iframe);
+	});
+}
+
+function findVideos() {
+	if (document.querySelectorAll('.video')) {
+		let videos = document.querySelectorAll('.video');
+		for (let i = 0; i < videos.length; i++) {
+			setupVideo(videos[i]);
+		}
+	}
+}
+findVideos();
+
+// slider
+window.onload = () => {
+	const swiper = new Swiper('.swiper', {
+		resistance: false,
+		spaceBetween: 20,
+
+		pagination: {
+			el: '.swiper-pagination',
+		},
+
+		breakpoints: {
+			615: {
+				slidesPerView: 2,
+			},
+			940: {
+				slidesPerView: 3,
+			},
+			1271: {
+				slidesPerView: 4,
+			}
+		}
+	})
 }

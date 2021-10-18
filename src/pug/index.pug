@@ -27,178 +27,193 @@ html(lang="en")
 		//  /favicon
 		link(rel='stylesheet', href='./css/style.css')
 	body
-		//  overflow
-		.overflow
-			//  header-page
-			header.header-page
+
+		//  header-page
+		header.header-page
+			//  wrap
+			.wrap
+				//  nav-page
+				nav.nav-page
+					a.nav-page__logo(href='./', aria-current='page')
+						img.logo-full(src='./img/logo/logo-full.svg', alt='«Инжинириум» МГТУ им. Н.Э. Баумана', width='315', height='55')
+
+					//  nav-page__list
+					ul.nav-page__list.nav-page__list--page.hidde-lg
+						li.nav-page__item
+							a.nav-page__link-page(href='#about') О нас
+						li.nav-page__item
+							a.nav-page__link-page(href='#cource') Курсы
+						li.nav-page__item
+							a.nav-page__link-page(href='#faq') FAQ
+						li.nav-page__item
+							a.nav-page__link-page(href='#contact') Контакты
+					//  /nav-page__list
+
+					//  nav-page__list-end
+					.nav-page__list.nav-page__list--end.hidde-md
+						a.nav-page__link.nav-page__link--icon-phone(href='tel:79997004061') 7-999-700-40-61
+						a.nav-page__link.btn(href='index.html') Записаться
+					//  /nav-page__list-end
+
+				//  /nav-page
+			//  /wrap
+		//  /header-page
+
+		//  main
+		main
+			//  top
+			section.top
+				//  container-flex-desktop
+				.top__wrap.wrap.wrap--wap.container-flex-desktop
+					.top__container-decor.container-decor
+					//  container-text
+					.container-text
+						h1 Оффлайн интенсивы по&#160;программированию
+						.top__btn-wrap
+							a.top__btn.btn.btn--action(href='index.html') Записаться
+							a.top__btn.btn.btn--icon-arrow(href='#video') О школе
+					//  /container-text
+				//  /container-flex-desktop
+			//  /top
+
+			//  step
+			section.step
+				h2.visually-hidden Уровни обучения
 				//  wrap
 				.wrap
-					//  nav-page
-					nav.nav-page
-						a.nav-page__logo(href='./', aria-current='page')
-							img.logo-full(src='./img/logo/logo-full.svg', alt='«Инжинириум» МГТУ им. Н.Э. Баумана')
-						//  nav-page__wrap-list
-						.nav-page__wrap-list.js-nav-page-wrap-list
-							//  nav-page__list
-							ul.nav-page__list.nav-page__list--page
-								li.nav-page__item
-									a.nav-page__link(href='#about') О нас
-								li.nav-page__item
-									a.nav-page__link(href='#cource') Курсы
-								li.nav-page__item
-									a.nav-page__link(href='#faq') FAQ
-								li.nav-page__item
-									a.nav-page__link(href='#contact') Контакты
-							//  /nav-page__list
-							//  nav-page__list-end
-							.nav-page__list.nav-page__list--end
-								a.nav-page__link.nav-page__link--icon(href='tel:79997004061') 7-999-700-40-61
-								a.nav-page__link.btn.hidde-lg(href='#') Записаться
-							//  /nav-page__list-end
-						//  nav-page__wrap-list
-						button.nav-page__toggle.js-nav-page-toggle(type='button')
-							span.visually-hidden Показать меню
-					//  /nav-page
+					//  step__list
+					ol.step__list
+						li.step__item
+							p детский сад
+							h3 Увлекательные курсы
+							p для самых маленьких
+						li.step__item
+							p 1-4 класс
+							h3 Подготовительные курсы
+							p для младших классов
+						li.step__item
+							p 5-8 класс
+							h3 Инженерные курсы
+							p курсы для средней школы разной сложности
+						li.step__item
+							p 9-11 класс
+							h3 Технопарк
+							p Подготовка к поступлению в ВУЗ, проектная деятельность
+						li.step__item
+							img(src='./img/step/step-logo.png', alt='логотип МГТУ им. Н.Э. Баумана', width='66', height='77')
+							h3 МГТУ им. Н.Э. Баумана
+							p Поступление в ведущий ВУЗ страны
+					//  /step__list
 				//  /wrap
-			//  /header-page
-			//  main
-			main
-				//  top
-				section.top
-					//  container-flex-desktop
-					.wrap.container-flex-desktop
-						//  container-text
-						.container-text
-							h1 Оффлайн ИНТЕНСИВЫ ПО ПРОГРАММИРОВАНИЮ
-							a.top__btn.btn.btn--action(href='#') Записаться
-							a.top__btn.btn(href='#') О школе
-						//  /container-text
-						.top__container-decor.container-decor
-					//  /container-flex-desktop
-				//  /top
-				//  step
-				section.step
-					h2.visually-hidden Уровни обучения
-					//  wrap
-					.wrap
-						//  step__list
-						ol.step__list
-							li.step__item
-								p детский сад
-								h3 Увлекательные курсы
-								p для самых маленьких
-							li.step__item
-								p 1-4 класс
-								h3 Подготовительные курсы
-								p для младших классов
-							li.step__item
-								p 5-8 класс
-								h3 Инженерные курсы
-								p курсы для средней школы разной сложности
-							li.step__item
-								p 9-11 класс
-								h3 Технопарк
-								p Подготовка к поступлению в ВУЗ, проектная деятельность
-							li.step__item
-								img(src='./img/step/step-logo.png', alt='логотип МГТУ им. Н.Э. Баумана')
-								h3 МГТУ им. Н.Э. Баумана
-								p Поступление в ведущий ВУЗ страны
-						//  /step__list
-						iframe(width='1140', height='641', src='https://www.youtube.com/embed/WC2hRZlrcbs', title='YouTube video player', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
-					//  /wrap
-				//  /step
-				//  about
-				section#about.about
-					h2.visually-hidden о нас
-					//  container-flex-desktop
-					.wrap.container-flex-desktop
-						//  container-text
-						.container-text
-							p НАША ЦЕЛЬ — создание нового поколения молодых инженеров
-							p Задача организации, в особенности же реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-							p Задача организации, в особенности же реализация намеченных плановых заданий влечет за собой процесс внедрения.
-							a.about__btn.btn.btn--action(href='#') Записаться
-						//  /container-text
-						.about__container-decor.container-decor
-					//  /container-flex-desktop
-				//  /about
-				//  cource
-				section#cource.cource
-					.cource__wrap.wrap
-						h2 Курсы инжинириума
-						ul.cource__list
-							li.cource__item.cource__item--pyton Программирование на python (5-8 класс)
-							li.cource__item.cource__item--pyton Программирование на python (9-11 класс)
-							li.cource__item.cource__item--c Программирование на C++ (9-11 класс)
-							li.cource__item.cource__item--web WEB-программирование (5-8 класс)
-							li.cource__item.cource__item--web WEB-программирование (5-8 класс)
-				//  /cource
-				//  faq
-				section#faq.faq
-					//  container-flex-desktop
-					.wrap.container-flex-desktop
-						.faq__container-decor.container-decor
-						//  container-text
-						.container-text
-							h2 Часто задаваемые вопросы
-							ul.faq__list
-								li.faq__item Какая длительность одного занятия?
-								li.faq__item Сколько длится полный курс?
-								li.faq__item Есть ли дни открытых дверей?
-								li.faq__item Остались вопросы?
-							p
-								| Позвоните нам:
-								a(href='79997004061') 7-999-700-40-61
-						//  /container-text
-					//  /container-flex-desktop
-				//  /faq
-				//  map
-				section#contact.map
-					h2.visually-hidden Контакты
-					.map__wrap.wrap
-						#map.map(aria-hidden='true', style='width: 100%; height: 320px;')
-				//  /map
-			//  /main
-			//  page-footer
-			footer.page-footer
-				.wrap
-					//  nav-page
-					nav.nav-page
-						a(href='./', aria-current='page')
-							img.logo-full(src='./img/logo/logo-full.svg', alt='«Инжинириум» МГТУ им. Н.Э. Баумана')
-						//  nav-page__wrap-list
-						.nav-page__wrap-list
-							//  nav-page__list
-							ul.nav-page__list.nav-page__list--page
-								li.nav-page__item
-									a.nav-page__link(href='#about') О нас
-								li.nav-page__item
-									a.nav-page__link(href='#cource') Курсы
-								li.nav-page__item
-									a.nav-page__link(href='#faq') FAQ
-								li.nav-page__item
-									a.nav-page__link(href='#contact') Контакты
-							//  /nav-page__list
-							//  nav-page__list-end
-							.nav-page__list.nav-page__list--end
-								a.nav-page__link.nav-page__link--icon(href='tel:79997004061') 7-999-700-40-61
-								//  nav-page__social-list
-								ul.nav-page__social-list
-									li.nav-page__social-item
-										a.nav-page__social.nav-page__social--youtube(href='https://www.youtube.com/channel/UCBx0xw9L-vvIkiNeCWrP75Q/videos')
-											span.visually-hidden Youtube.com
-									li.nav-page__social-item
-										a.nav-page__social.nav-page__social--vk(href='https://vk.com/inginirium_cherepovec')
-											span.visually-hidden Вконтакте
-								//  /nav-page__social-list
-							//  /nav-page__list-end
-						//  nav-page__wrap-list
-					//  /nav-page
-			//  /page-footer
+			//  /step
+
+			//  about
+			section.about
+				h2.visually-hidden о нас
+
+				.video-wrap#video
+					.video
+						a.video__link(href='https://youtu.be/WC2hRZlrcbs' target='_blank')
+							img.video__media(src='https://i.ytimg.com/vi/WC2hRZlrcbs/maxresdefault.jpg' alt='index.html')
+						button.video__button(aria-label='Запустить видео')
+							svg(height='100%' version='1.1' viewBox='0 0 68 48' width='100%')
+								path.video__case(d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z')
+								path(d='M 45,24 27,14 27,34' fill='#fff')
+
+				//  container-flex-desktop
+				#about.about__wrap.wrap.wrap--wap.container-flex-desktop
+					//  container-text
+					.container-text
+						p.about__heading.heading НАША ЦЕЛЬ — создание нового поколения молодых инженеров
+						p Задача организации, в особенности же реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+						p Задача организации, в особенности же реализация намеченных плановых заданий влечет за собой процесс внедрения.
+						a.about__btn.btn.btn--action(href='index.html') Записаться
+					//  /container-text
+					.about__container-decor.container-decor
+				//  /container-flex-desktop
+			//  /about
+
+			//  cource
+			section#cource.cource
+				.cource__wrap.wrap
+					h2 Курсы инжинириума
+					.swiper
+						ul.cource__list.swiper-wrapper
+							li.cource__item.cource__item--pyton.swiper-slide Программирование на python (5-8 класс)
+							li.cource__item.cource__item--pyton.swiper-slide Программирование на python (9-11 класс)
+							li.cource__item.cource__item--c.swiper-slide Программирование на C++ (9-11 класс)
+							li.cource__item.cource__item--web.swiper-slide WEB-программирование (5-8 класс)
+							li.cource__item.cource__item--web.swiper-slide WEB-программирование (5-8 класс)
+						.swiper-pagination
+			//  /cource
+
+			//  faq
+			section#faq.faq
+				//  container-flex-desktop
+				.faq__wrap.wrap.wrap--wap.container-flex-desktop
+					//  container-text
+					.container-text
+						h2.heading Часто задаваемые вопросы
+						ul.faq__list
+							li.faq__item Какая длительность одного занятия?
+							li.faq__item Сколько длится полный курс?
+							li.faq__item Есть ли дни открытых дверей?
+							li.faq__item Остались вопросы?
+						p
+							| Позвоните нам:
+							|
+							a(href='79997004061') 7-999-700-40-61
+					//  /container-text
+					.faq__container-decor.container-decor
+				//  /container-flex-desktop
+			//  /faq
+
+			//  map
+			section#contact.map
+				h2.visually-hidden Контакты
+				.map__wrap.wrap
+					#map.map(aria-hidden='true')
+		//  /map
+		//  /main
+
+		//  page-footer
+		footer.page-footer
+			.wrap
+				//  nav-page
+				nav.nav-page
+					a.nav-page__logo(href='./', aria-current='page')
+						img.logo-full(src='./img/logo/logo-full.svg', alt='«Инжинириум» МГТУ им. Н.Э. Баумана', width='315', height='55')
+
+					//  nav-page__list
+					ul.nav-page__list.nav-page__list--page.hidde-lg
+						li.nav-page__item
+							a.nav-page__link-page(href='#about') О нас
+						li.nav-page__item
+							a.nav-page__link-page(href='#cource') Курсы
+						li.nav-page__item
+							a.nav-page__link-page(href='#faq') FAQ
+						li.nav-page__item
+							a.nav-page__link-page(href='#contact') Контакты
+					//  /nav-page__list
+
+					//  nav-page__list-end
+					.nav-page__list.nav-page__list--end
+						//  nav-page__social-list
+						ul.nav-page__social-list
+							li.nav-page__social-item
+								a.nav-page__social.nav-page__social--youtube(href='https://www.youtube.com/channel/UCBx0xw9L-vvIkiNeCWrP75Q/videos')
+									span.visually-hidden Youtube.com
+							li.nav-page__social-item
+								a.nav-page__social.nav-page__social--vk(href='https://vk.com/inginirium_cherepovec')
+									span.visually-hidden Вконтакте
+						//  /nav-page__social-list
+						a.nav-page__link.nav-page__link--icon-phone(href='tel:79997004061') 7-999-700-40-61
+					//  /nav-page__list-end
+
+				//  /nav-page
+		//  /page-footer
 		//  /overflow
-		script(src='./js/picturefill.js', async)
-		script(src='./js/loading-attribute-polyfill.umd.js', async)
+		script(src='js/swiper-bundle.min.js')
 		script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU')
 		script
 			include ../../build/js/main.min.js
-		//- script(src='js/main.js')

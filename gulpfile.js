@@ -67,7 +67,7 @@ exports.copy_css = copy_css;
  * less
  */
 const lessToCss = () => {
-	return src(['src/less/style.less', 'src/less/fonts.less', 'src/less/background.less'])
+	return src(['src/less/style.less', 'src/less/fonts.less'])
 		.pipe(plumber({
 			errorHandler: notify.onError(function (err) {
 				return {
@@ -76,7 +76,6 @@ const lessToCss = () => {
 				}
 			})
 		}))
-		.pipe(sourcemaps.init())
 		.pipe(less())
 		.pipe(autoprefixer({
 			grid: true,
@@ -84,7 +83,6 @@ const lessToCss = () => {
 		}))
 		.pipe(gcmq())
 		.pipe(csso())
-		.pipe(sourcemaps.write('.'))
 		.pipe(dest('build/css'))
 		.pipe(browserSync.stream());
 }

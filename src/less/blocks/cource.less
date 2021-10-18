@@ -1,0 +1,55 @@
+.cource__list {
+	.list-rezet;
+	padding-bottom: 52px;
+}
+
+.cource__item {
+	display: inline-block;
+	padding: 50px 20px 67px;
+	margin: 0 32px 32px 0;
+	width: 286px;
+	box-sizing: border-box;
+
+	background: #FFFFFF;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+	border-radius: 10px;
+
+	font-family: Roboto Slab;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 26px;
+
+	&::before {
+		content: '';
+		display: block;
+		width: 72px;
+		height: 72px;
+		margin-bottom: 18px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	&--pyton::before {
+		background-image: url(../img/icon-cource/icon-python.png);
+	}
+
+	&--c::before {
+		background-image: url(../img/icon-cource/icon-c.png);
+	}
+
+	&--web::before {
+		background-image: url(../img/icon-cource/icon-web.png);
+	}
+}
+.cource .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active {
+	background-color: #000!important;
+	opacity: 1;
+}
+
+.cource .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+	width: 14px;
+	height: 14px;
+	background-color: rgba(0, 0, 0, 0.27);
+	margin: 0px 10px;
+}

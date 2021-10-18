@@ -1,0 +1,46 @@
+.about__btn {
+	display: block;
+	max-width: 319px;
+	width: 100%;
+	margin: 33px auto 0;
+}
+
+@media (max-width: @max-lg) {
+	.about__heading {
+		&::after {
+			content: '';
+			display: block;
+			margin: 48px auto 0;
+			width: 316px;
+			height: 316px;
+			background-image: url(../img/img-ambition.png);
+		}
+	}
+}
+
+@media (min-width: @min-lg) {
+	.about__container-decor {
+		background-image: url(../img/img-ambition@desktop.png);
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 413px auto;
+	}
+
+	.about__wrap {
+		display: flex;
+	}
+}
+
+.about {
+	background-image: url(../img/bg/bg-about.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 996px auto;
+}
+
+@media (min-width: 996px) {
+	.about {
+		background-image: url(../img/bg/bg-about@desktop.jpg);
+		background-size: auto;
+	}
+}
