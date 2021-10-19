@@ -1,3 +1,13 @@
+.cource {
+	overflow: hidden;
+	padding-bottom: 60px;
+}
+
+.cource__heading {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
 .cource__list {
 	.list-rezet;
 	padding-bottom: 52px;
@@ -30,8 +40,9 @@
 		background-size: contain;
 	}
 }
+
 .cource .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active {
-	background-color: #000!important;
+	background-color: #000 !important;
 	opacity: 1;
 }
 
@@ -40,4 +51,14 @@
 	height: 14px;
 	background-color: rgba(0, 0, 0, 0.27);
 	margin: 0px 10px;
+}
+
+@media (min-width: @min-lg) {
+	.cource {
+		padding-bottom: 80px;
+	}
+
+	.cource__heading {
+		margin-bottom: 61px;
+	}
 }

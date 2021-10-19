@@ -1,12 +1,15 @@
 @width: 28px;
 
+.step {
+	padding-bottom: 16px;
+}
+
 .step__list {
 	.list-rezet;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 40px;
 }
 
 .step__item {
@@ -82,7 +85,7 @@
 			background-color: #F3E01E;
 
 			&::before {
-				background-image: url(../../img/step/step-start.svg);
+				background-image: url(../img/step/step-start.svg);
 			}
 
 			&::after {
@@ -164,7 +167,7 @@
 @media (min-width: 1210px) {
 	.step__list {
 		align-items: flex-end;
-		margin-bottom: 66px;
+		// margin-bottom: 66px;
 	}
 
 	.step__item {
