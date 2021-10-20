@@ -19,7 +19,6 @@ html(lang="en")
 		link(rel='icon', type='image/png', sizes='32x32', href='img/favicon/favicon-32x32.png')
 		link(rel='icon', type='image/png', sizes='96x96', href='img/favicon/favicon-96x96.png')
 		link(rel='icon', type='image/png', sizes='16x16', href='img/favicon/favicon-16x16.png')
-		link(rel='manifest', href='manifest.json')
 		meta(name='msapplication-TileColor', content='#FEE500')
 		meta(name='msapplication-TileImage', content='/ms-icon-144x144.png')
 		link(rel='shortcut icon', href='favicon.ico', type='image/x-icon')
@@ -40,19 +39,19 @@ html(lang="en")
 					//  nav-page__list
 					ul.nav-page__list.nav-page__list--page.hidde-lg
 						li.nav-page__item
-							a.nav-page__link-page(href='#about') О нас
+							a.nav-page__link.nav-page__link-page(href='#about') О нас
 						li.nav-page__item
-							a.nav-page__link-page(href='#cource') Курсы
+							a.nav-page__link.nav-page__link-page(href='#cource') Курсы
 						li.nav-page__item
-							a.nav-page__link-page(href='#faq') FAQ
+							a.nav-page__link.nav-page__link-page(href='#faq') FAQ
 						li.nav-page__item
-							a.nav-page__link-page(href='#contact') Контакты
+							a.nav-page__link.nav-page__link-page(href='#contact') Контакты
 					//  /nav-page__list
 
 					//  nav-page__list-end
 					.nav-page__list.nav-page__list--end.hidde-md
 						a.nav-page__link.nav-page__link--icon-phone(href='tel:79997004061') 7-999-700-40-61
-						a.nav-page__link.btn(href='index.html') Записаться
+						a.nav-page__link.btn(href='#popup', dada-target-popup="popup") Записаться
 					//  /nav-page__list-end
 
 				//  /nav-page
@@ -70,7 +69,7 @@ html(lang="en")
 					.container-text
 						h1 Оффлайн интенсивы по&#160;программированию
 						.top__btn-wrap
-							a.top__btn.btn.btn--action(href='index.html') Записаться
+							a.top__btn.btn.btn--action(href='#popup', dada-target-popup="popup") Записаться
 							a.top__btn.btn.btn--icon-arrow(href='#video') О школе
 					//  /container-text
 				//  /container-flex-desktop
@@ -127,7 +126,7 @@ html(lang="en")
 						p.about__heading.heading НАША ЦЕЛЬ — создание нового поколения молодых инженеров
 						p Задача организации, в особенности же реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
 						p Задача организации, в особенности же реализация намеченных плановых заданий влечет за собой процесс внедрения.
-						a.about__btn.btn.btn--action(href='index.html') Записаться
+						a.about__btn.btn.btn--action(href='#popup', dada-target-popup="popup") Записаться
 					//  /container-text
 					.about__container-decor.container-decor
 				//  /container-flex-desktop
@@ -173,8 +172,35 @@ html(lang="en")
 				h2.visually-hidden Контакты
 				.map__wrap.wrap
 					#map.map(aria-hidden='true')
-		//  /map
-		//  /main
+			//  /map
+			//  /main
+
+			section#popup.popup.bolt-popup.no-js(role="dialog", dada-path-popup="popup")
+				.popup__wrap.wrap.bolt-popup__container
+					button.bolt-popup__close(aria-label='Закрыть')
+					h2.visually-hidden Обратная связь
+
+					form.form(action="#", method="post")
+						p.popup__heading Запишем на курсы и ответим на любые ваши вопросы
+
+						label.form__label
+							input.form__controll(type="text", name='name', placeholder='Ваше имя')
+						label.form__label
+							input.form__controll(type="tel", name='phone', placeholder='Телефон*')
+						label.form__label
+							input.form__controll(type="email", name='email', placeholder='E-mail')
+						label.form__label
+							textarea.form__controll(name="", cols="30", rows="10", placeholder='Комментарий')
+						button.form__btn.btn.js_submit.button__text Отправить
+						p.form__notes Нажимая на кнопку "Отправить", вы принимаете
+							|
+							|
+							a "Согласие на&#160обработку персональных данных"
+							|
+							| и подтверждаете, что ознакомлены с
+							|
+							a "Политикой конфиденциальности"
+							|.
 
 		//  page-footer
 		footer.page-footer
@@ -187,13 +213,13 @@ html(lang="en")
 					//  nav-page__list
 					ul.nav-page__list.nav-page__list--page.hidde-lg
 						li.nav-page__item
-							a.nav-page__link-page(href='#about') О нас
+							a.nav-page__link.nav-page__link-page(href='#about') О нас
 						li.nav-page__item
-							a.nav-page__link-page(href='#cource') Курсы
+							a.nav-page__link.nav-page__link-page(href='#cource') Курсы
 						li.nav-page__item
-							a.nav-page__link-page(href='#faq') FAQ
+							a.nav-page__link.nav-page__link-page(href='#faq') FAQ
 						li.nav-page__item
-							a.nav-page__link-page(href='#contact') Контакты
+							a.nav-page__link.nav-page__link-page(href='#contact') Контакты
 					//  /nav-page__list
 
 					//  nav-page__list-end
@@ -214,6 +240,6 @@ html(lang="en")
 		//  /page-footer
 		//  /overflow
 		script(src='js/swiper-bundle.min.js')
-		//- script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU')
+		script(src="js/bolt-popup.min.js")
 		script
 			include ../../build/js/main.min.js

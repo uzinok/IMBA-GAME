@@ -1,0 +1,53 @@
+.popup.bolt-popup {
+	z-index: 1;
+}
+
+.js.popup {
+	margin: 0;
+	padding: 0;
+}
+
+.popup__heading {
+	text-align: center;
+}
+
+.no-js .bolt-popup__close {
+	display: none;
+}
+
+div.popup__wrap {
+	width: 100%;
+	max-width: 668px;
+	padding-top: 46px;
+	padding-bottom: 59px;
+}
+
+button.bolt-popup__close {
+	top: 23px;
+	right: 32px;
+
+	&::before,
+	&::after {
+		width: 27px;
+		background-color: #C7C7C7;
+
+		transition: background 0.2s ease-in-out;
+	}
+
+	&:hover {
+
+		&::before,
+		&::after {
+			background-color: #9c9c9c;
+		}
+	}
+
+	&:focus,
+	&:window-inactive {
+
+		&::before,
+		&::after {
+			background-color: #000;
+		}
+	}
+}

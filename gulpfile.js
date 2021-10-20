@@ -42,8 +42,7 @@ const copy = () => {
 	return src([
 			'src/fonts/*.+(woff|woff2|ttf)*',
 			'src/img/**/*.+(png|jpg|svg|webp|ico|gif|JPG)*',
-			'src/favicon.ico',
-			'src/manifest.json'
+			'src/favicon.ico'
 		], {
 			base: 'src'
 		})

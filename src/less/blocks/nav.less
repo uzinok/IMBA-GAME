@@ -44,10 +44,20 @@
 		display: flex;
 	}
 
+	.nav-page__link:not(.btn) {
+		border-bottom: 1px solid transparent;
+		transition: border 0.2s ease-in-out;
+
+		&:hover {
+			border-bottom: 1px solid #000;
+		}
+	}
+
 	.nav-page__link-page {
 		display: inline-block;
 		padding: 12px;
 		text-decoration: none;
+		font-weight: normal;
 		font-size: 14px;
 		line-height: 17px;
 		color: #000;

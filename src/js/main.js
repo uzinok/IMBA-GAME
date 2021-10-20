@@ -10,7 +10,7 @@ function asyncCss(files) {
 
 }
 
-asyncCss(['css/fonts.css', 'css/background.css', 'css/swiper-bundle.min.css']);
+asyncCss(['css/fonts.css', 'css/background.css', 'css/swiper-bundle.min.css', 'css/bolt-popup.css']);
 
 // scroll
 const anchors = document.querySelectorAll('a[href*="#"]')
@@ -142,4 +142,23 @@ window.onload = () => {
 			}
 		}
 	})
+
+// popup
+	let noJs = document.querySelector('.no-js');
+	noJs.classList.remove('no-js');
+	noJs.classList.add('js');
+	const linkToButton = document.querySelectorAll('[dada-target-popup]');
+
+	for (let i = 0; i < linkToButton.length; i++) {
+		// linkToButton
+		let button = document.createElement('button');
+		button.innerHTML = linkToButton[i].innerHTML;
+		button.setAttribute('class', linkToButton[i].getAttribute('class'));
+		button.setAttribute('dada-target-popup', linkToButton[i].getAttribute('dada-target-popup'));
+		linkToButton[i].before(button);
+		linkToButton[i].remove();
+	}
+
+	let popup = new BoltPopup(document.querySelector('[dada-path-popup="popup"]'))
+
 }
