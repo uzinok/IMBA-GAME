@@ -1,5 +1,9 @@
+//- заменить номера телефонов в js для булета карты
+- var phoneView = '7-999-700-40-61'
+- var phoneHref = 'tel:79997004061'
+
 doctype html
-html(lang="en")
+html(lang="ru")
 	head
 		meta(charset='UTF-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -50,7 +54,7 @@ html(lang="en")
 
 					//  nav-page__list-end
 					.nav-page__list.nav-page__list--end.hidde-md
-						a.nav-page__link.nav-page__link--icon-phone(href='tel:79997004061') 7-999-700-40-61
+						a.nav-page__link.nav-page__link--icon-phone(href=phoneHref) #{phoneView}
 						a.nav-page__link.btn(href='#popup', dada-target-popup="popup") Записаться
 					//  /nav-page__list-end
 
@@ -113,7 +117,7 @@ html(lang="en")
 					.video-wrap
 						.video
 							a.video__link(href='https://youtu.be/WC2hRZlrcbs' target='_blank')
-								img.video__media(src='https://i.ytimg.com/vi/WC2hRZlrcbs/maxresdefault.jpg' alt='index.html')
+								img.video__media(src='https://i.ytimg.com/vi/WC2hRZlrcbs/maxresdefault.jpg' alt='видео')
 							button.video__button(aria-label='Запустить видео')
 								svg(height='100%' version='1.1' viewBox='0 0 68 48' width='100%')
 									path.video__case(d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z')
@@ -161,7 +165,7 @@ html(lang="en")
 						p
 							| Позвоните нам:
 							|
-							a(href='79997004061') 7-999-700-40-61
+							a(href=phoneHref) #{phoneView}
 					//  /container-text
 					.faq__container-decor.container-decor
 				//  /container-flex-desktop
@@ -170,6 +174,9 @@ html(lang="en")
 			//  map
 			section#contact.map
 				h2.visually-hidden Контакты
+				div.visually-hidden
+					address .visually-hidden
+					a(href=phoneHref) #{phoneView}
 				.map__wrap.wrap
 					#map.map(aria-hidden='true')
 			//  /map
@@ -233,7 +240,7 @@ html(lang="en")
 								a.nav-page__social.nav-page__social--vk(href='https://vk.com/inginirium_cherepovec')
 									span.visually-hidden Вконтакте
 						//  /nav-page__social-list
-						a.nav-page__link.nav-page__link--icon-phone(href='tel:79997004061') 7-999-700-40-61
+						a.nav-page__link.nav-page__link--icon-phone(href=phoneHref) #{phoneView}
 					//  /nav-page__list-end
 
 				//  /nav-page
