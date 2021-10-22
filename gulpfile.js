@@ -95,7 +95,7 @@ const htmlTo = () => {
 		.pipe(plumber({
 			errorHandler: notify.onError(function (err) {
 				return {
-					title: "Pug",
+					// title: "Pug",
 					message: err.message
 				}
 			})

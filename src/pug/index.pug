@@ -42,12 +42,12 @@ html(lang="ru")
 
 					//  nav-page__list
 					ul.nav-page__list.nav-page__list--page.hidde-lg
-						li.nav-page__item
-							a.nav-page__link.nav-page__link-page(href='#about') О нас
+						//- li.nav-page__item
+							//- a.nav-page__link.nav-page__link-page(href='#about') О нас
 						li.nav-page__item
 							a.nav-page__link.nav-page__link-page(href='#cource') Курсы
-						li.nav-page__item
-							a.nav-page__link.nav-page__link-page(href='#faq') FAQ
+						//- li.nav-page__item
+							//- a.nav-page__link.nav-page__link-page(href='#faq') FAQ
 						li.nav-page__item
 							a.nav-page__link.nav-page__link-page(href='#contact') Контакты
 					//  /nav-page__list
@@ -124,16 +124,16 @@ html(lang="ru")
 									path(d='M 45,24 27,14 27,34' fill='#fff')
 
 				//  container-flex-desktop
-				#about.about__wrap.wrap.wrap--wap.container-flex-desktop
-					//  container-text
-					.container-text
-						p.about__heading.heading НАША ЦЕЛЬ — создание нового поколения молодых инженеров
-						p Задача организации, в особенности же реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-						p Задача организации, в особенности же реализация намеченных плановых заданий влечет за собой процесс внедрения.
-						a.about__btn.btn.btn--action(href='#popup', dada-target-popup="popup") Записаться
-					//  /container-text
-					.about__container-decor.container-decor
-				//  /container-flex-desktop
+				//- #about.about__wrap.wrap.wrap--wap.container-flex-desktop
+				//- 	//  container-text
+				//- 	.container-text
+				//- 		p.about__heading.heading НАША ЦЕЛЬ — создание нового поколения молодых инженеров
+				//- 		p Задача организации, в особенности же реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+				//- 		p Задача организации, в особенности же реализация намеченных плановых заданий влечет за собой процесс внедрения.
+				//- 		a.about__btn.btn.btn--action(href='#popup', dada-target-popup="popup") Записаться
+				//- 	//  /container-text
+				//- 	.about__container-decor.container-decor
+				//- //  /container-flex-desktop
 			//  /about
 
 			//  cource
@@ -156,16 +156,19 @@ html(lang="ru")
 				.faq__wrap.wrap.wrap--wap.container-flex-desktop
 					//  container-text
 					.container-text
-						h2.heading Часто задаваемые вопросы
+						h2.visually-hidden Часто задаваемые вопросы
 						ul.faq__list
-							li.faq__item Какая длительность одного занятия?
-							li.faq__item Сколько длится полный курс?
-							li.faq__item Есть ли дни открытых дверей?
-							li.faq__item Остались вопросы?
-						p
-							| Позвоните нам:
-							|
-							a(href=phoneHref) #{phoneView}
+							li.faq__item.heading Какая длительность одного занятия?
+							li.faq__item.heading Сколько длится полный курс?
+							li.faq__item.heading Есть ли дни открытых дверей?
+							li.faq__item.heading Позвоните нам:
+								|
+								|
+								a(href=phoneHref) #{phoneView}
+						//- p
+						//- 	| Позвоните нам:
+						//- 	|
+						//- 	a(href=phoneHref) #{phoneView}
 					//  /container-text
 					.faq__container-decor.container-decor
 				//  /container-flex-desktop
@@ -197,7 +200,7 @@ html(lang="ru")
 						label.form__label
 							input.form__controll(type="email", name='email', placeholder='E-mail')
 						label.form__label
-							textarea.form__controll(name="", cols="30", rows="10", placeholder='Комментарий')
+							textarea.form__controll(name="cc_comment", cols="30", rows="10", placeholder='Комментарий')
 						button.form__btn.btn.js_submit.button__text Отправить
 						p.form__notes Нажимая на кнопку "Отправить", вы принимаете
 							|
@@ -219,12 +222,12 @@ html(lang="ru")
 
 					//  nav-page__list
 					ul.nav-page__list.nav-page__list--page.hidde-lg
-						li.nav-page__item
-							a.nav-page__link.nav-page__link-page(href='#about') О нас
+						//- li.nav-page__item
+						//- 	a.nav-page__link.nav-page__link-page(href='#about') О нас
 						li.nav-page__item
 							a.nav-page__link.nav-page__link-page(href='#cource') Курсы
-						li.nav-page__item
-							a.nav-page__link.nav-page__link-page(href='#faq') FAQ
+						//- li.nav-page__item
+						//- 	a.nav-page__link.nav-page__link-page(href='#faq') FAQ
 						li.nav-page__item
 							a.nav-page__link.nav-page__link-page(href='#contact') Контакты
 					//  /nav-page__list
